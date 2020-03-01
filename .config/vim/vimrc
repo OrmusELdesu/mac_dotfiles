@@ -1,0 +1,38 @@
+syntax on
+set nocp nu rnu hls ic is
+set nobackup
+set nowritebackup
+set noswapfile
+set viminfo+=n~/.config/vim/viminfo
+set backspace=indent,eol,start
+set clipboard=unnamed,unnamedplus
+
+set tabstop=3
+set shiftwidth=3
+set softtabstop=3
+set expandtab
+
+let g:netrw_dirhistmax=0
+let mapleader=","
+
+inoremap jk <esc>
+vnoremap <leader>jk <esc>
+nnoremap ] }
+nnoremap [ {
+
+vnoremap ] }
+vnoremap [ {
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
+nnoremap <leader>w :w<cr>
+nnoremap <leader>x :x<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>e :q!<cr>
+nnoremap <leader>v :edit $MYVIMRC<cr>
+nnoremap <leader>s :source $MYVIMRC<cr>
+nnoremap <leader>n :bprev<cr>
+nnoremap <leader>m :bnext<cr>
+

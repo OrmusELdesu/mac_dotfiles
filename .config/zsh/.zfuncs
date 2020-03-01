@@ -1,0 +1,11 @@
+function getip()
+{
+   curl -s ifconfig.me/ip;
+   echo
+}
+
+function weather()
+{
+   curl -s wttr.in
+   echo
+}

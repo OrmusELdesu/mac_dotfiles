@@ -1,0 +1,7 @@
+# This is Git's per-user configuration file.
+[user]
+	name = ormus
+	email = ormus@beta-frame.local
+# Please adapt and uncomment the following lines:
+#	name = ormus
+#	email = ormus@beta-frame.local

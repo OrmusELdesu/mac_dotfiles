@@ -1,0 +1,35 @@
+# navigating diretories
+alias apps="cd /Applications"
+alias dls="cd ~/Downloads"
+alias docs="cd ~/Documents"
+alias dsk="cd ~/Desktop"
+alias mus="cd ~/Music"
+alias mvs="cd ~/Movies"
+alias pics="cd ~/Pictures"
+
+# editing zsh dotfilfes
+alias za="vim ~/.config/zsh/.zalias"
+alias ze="vim ~/.zshenv"
+alias zf="vim ~/.config/zsh/.zfuncs"
+alias zr="vim ~/.config/zsh/.zshrc"
+
+# sourcing zsh dotfiles
+alias reza="source ~/.config/zsh/.zalias"
+alias reze="source ~/.zshenv"
+alias rezr="source ~/.config/zsh/.zshrc"
+
+# list shortcuts
+alias ls="ls --color=auto"
+alias ll="ls -l"
+alias la="ls -al"
+alias lh="ls -lh"
+
+# vimrc shortchuts
+alias vimrc="vim $HOME/.config/vim/vimrc"
+alias cvimrc="vim $HOME/.config/cvim/cvimrc"
+
+# wget HSTS (HTTP Secure Tracking System
+alias wget="wget --hsts-file=~/.config/wget/.wget-hsts"
+
+# dotfiles repository
+alias dot="git --git-dir=$HOME/.config/.dotrepo --work-tree=$HOME"
