@@ -3,9 +3,11 @@ alias apps="cd /Applications"
 alias dls="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias dsk="cd ~/Desktop"
+alias home="cd $HOME"
 alias mus="cd ~/Music"
 alias mvs="cd ~/Movies"
 alias pics="cd ~/Pictures"
+alias trash="cd ~/.Trash"
 
 # editing zsh dotfilfes
 alias za="vim ~/.config/zsh/.zalias"
