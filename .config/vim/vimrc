@@ -1,5 +1,20 @@
+let mapleader=","
+
+call plug#begin('~/.config/vim/plugged')
+Plug 'terryma/vim-multiple-cursors'
+call plug#end()
+
 syntax on
+filetype on
+
+let g:netrw_dirhistmax=0
+let g:multi_cursor_exit_from_insert_mode=1
+let g:multi_cursor_exit_from_visual_mode=1
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_quit_key='<esc>'
+
 set nocp nu rnu hls ic is
+set autoindent
 set nobackup
 set nowritebackup
 set noswapfile
@@ -7,32 +22,73 @@ set viminfo+=n~/.config/vim/viminfo
 set backspace=indent,eol,start
 set clipboard=unnamed,unnamedplus
 
+" replace tabs with 3 spaces
 set tabstop=3
 set shiftwidth=3
 set softtabstop=3
 set expandtab
 
-let g:netrw_dirhistmax=0
-let mapleader=","
+" next and previous logical lin
+nnoremap <S-j> gj
+nnoremap <S-k> gk
 
-inoremap jk <esc>
-vnoremap <leader>jk <esc>
+" map escape key to jk 
+inoremap <silent> jk <esc>
+inoremap <silent> JK <esc>
+vnoremap <silent> <leader>jk <esc>
+vnoremap <silent> <leader>JK <esc>
+
+" go to next custom <++> marker
+nnoremap <leader>l <esc>/<++><cr>c4l
+inoremap <silent> <leader>l <esc>/<++><cr>c4l
+
+" next and previous tab navigation
+nnoremap <silent> <leader>z :tabp<cr>
+nnoremap <silent> <leader>x :tabn<cr>
+
+" next and previous paragraph navigation
 nnoremap ] }
 nnoremap [ {
-
 vnoremap ] }
 vnoremap [ {
+
+" map console mode to semi-colon
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+" inserting codeblock brackets {} to functions
+nnoremap <leader>. o{<cr>}<++><esc>ko<tab>
+inoremap <leader>. <esc>o{<cr>}<++><esc>ko<tab>
+nnoremap <leader>/ A{<cr>}<++><esc>ko<tab>
+inoremap <leader>/ <esc>A{<cr>}<++><esc>ko<tab>
+
+" file manipulation (create, read, update, delete)
 nnoremap <leader>w :w<cr>
 nnoremap <leader>x :x<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>e :q!<cr>
+
+" vimrc manipulation (edit, source, buffer nav)
 nnoremap <leader>v :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
 nnoremap <leader>n :bprev<cr>
 nnoremap <leader>m :bnext<cr>
 
+" detect filetypes by their extensions
+autocmd bufenter,bufnew *.tex call Latex()
+
+function! Latex()
+   inoremap <silent> ;d \documentclass{<++>}<++><esc>Fsli
+   inoremap <silent> ;i \begin{itemize}<cr>\end{itemize}<++><esc>ko<tab>
+   inoremap <silent> ;e \begin{enumerate}<cr>\end{enumerate}<++><esc>ko<tab>
+   inoremap <silent> ;u \item<space>
+   inoremap <silent> ;o \item[]<++><esc>F]i
+   inoremap <silent> ;sc \section{}<cr><++><esc>k0f}i
+   inoremap <silent> ;sb \subsection{}<cr><++><esc>k0f}i
+   inoremap <silent> ;ss \subsubsection{}<cr><++><esc>k0f}i
+   inoremap <silent> ;bf \textbf{}<cr><++><esc>k0f}i
+   inoremap <silent> ;be \begin{%DELRN%}<Enter><++><Enter><backspace>\end{%DELRN%}<Enter><Enter><backspace><++><Esc>4kfR:MultipleCursorsFind<Space>%DELRN%<cr>c
+   nnoremap <silent> <leader>c :!xelatex main<cr>
+endfunction
