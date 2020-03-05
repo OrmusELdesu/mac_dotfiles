@@ -9,6 +9,15 @@ alias mvs="cd ~/Movies"
 alias pics="cd ~/Pictures"
 alias trash="cd ~/.Trash"
 
+# school subjects
+alias school="docs; cd school"
+alias itn="school; cd ITN"
+alias ensa="school; cd ENSA"
+alias srwe="school; cd SRWE"
+alias dsa="school; cd DSA"
+alias citp="school; cd CITP"
+
+
 # editing zsh dotfilfes
 alias za="vim ~/.config/zsh/.zalias"
 alias ze="vim ~/.zshenv"
