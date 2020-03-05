@@ -1,10 +1,10 @@
 export PATH="/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH"
 export MANPATH="/opt/local/share/man:$MANPATH"
 export EDITOR="/opt/local/bin/vim"
+export VIMHOME="$HOME/.config/vim"
 export MYVIMRC="$HOME/.config/vim/vimrc"
 export VIMINIT="source $MYVIMRC"
 export PROMPT="[%F{cyan}%n%F{white}@%F{208}%m %F{yellow}%1~%F{reset_colour}]"$'\n'"%# "
-fpath+="~/.config/git/"
 
 [[ -f $HOME/.config/zsh/.zalias ]] && source $HOME/.config/zsh/.zalias
 [[ -f $HOME/.config/zsh/.zfuncs ]] && source $HOME/.config/zsh/.zfuncs
