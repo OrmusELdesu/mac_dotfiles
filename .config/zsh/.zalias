@@ -17,7 +17,6 @@ alias srwe="school; cd SRWE"
 alias dsa="school; cd DSA"
 alias citp="school; cd CITP"
 
-
 # editing zsh dotfilfes
 alias za="vim ~/.config/zsh/.zalias"
 alias ze="vim ~/.zshenv"
@@ -44,3 +43,6 @@ alias wget="wget --hsts-file=~/.config/wget/.wget-hsts"
 
 # dotfiles repository
 alias dot="git --git-dir=$HOME/.config/.dotrepo --work-tree=$HOME"
+
+# quit terminal
+alias q="exit"
