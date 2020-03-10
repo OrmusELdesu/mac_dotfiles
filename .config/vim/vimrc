@@ -21,6 +21,7 @@ set noswapfile
 set viminfo+=n~/.config/vim/viminfo
 set backspace=indent,eol,start
 set clipboard=unnamed,unnamedplus
+set numberwidth=2
 
 " replace tabs with 3 spaces
 set tabstop=3
@@ -91,6 +92,6 @@ function! Latex()
    inoremap <silent> ;sb \subsection{}<cr><++><esc>k0f}i
    inoremap <silent> ;ss \subsubsection{}<cr><++><esc>k0f}i
    inoremap <silent> ;bf \textbf{}<esc>i
-   inoremap <silent> ;be \begin{%DELRN%}<Enter><++><Enter><backspace>\end{%DELRN%}<Enter><Enter><backspace><++><Esc>4kfR:MultipleCursorsFind<Space>%DELRN%<cr>c
+   inoremap <silent> ;be \begin{DELRN}<Enter><++><Enter>\end{DELRN}<esc>:MultipleCursorsFind<space>DELRN<cr>c
    nnoremap <silent> <leader>c :!xelatex main<cr>
 endfunction
