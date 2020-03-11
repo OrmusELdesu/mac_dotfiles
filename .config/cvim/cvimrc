@@ -23,19 +23,19 @@ map ga closeTabRight
 map zf yankUrl
 map zF multiYankUrl
 
-" site specific config
-site '*://9gag.com/*' {
-    unmap j k l h p
-}
-
-site '*://*.youtube.com/*' {
-    unmap j k l f i
-    unmap cm cr 
-    unmap mf mr my
-    map F createHint
-}
-
-site '*://*.facebook.com/*' {
-    unmap j k l f 
-    unmap cm cr 
-}
+"site specific config
+"site '*://9gag.com/*' {
+"    unmap j k l h p
+"}
+"
+"site '*://*.youtube.com/*' {
+"    unmap j k l f i
+"    unmap cm cr 
+"    unmap mf mr my
+"    map F createHint
+"}
+"
+"site '*://*.facebook.com/*' {
+"    unmap j k l f 
+"    unmap cm cr 
+"}
