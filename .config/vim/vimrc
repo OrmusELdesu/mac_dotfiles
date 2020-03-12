@@ -86,6 +86,7 @@ function! Latex()
    inoremap <silent> ;i \begin{itemize}<cr>\end{itemize}<++><esc>ko
    inoremap <silent> ;g \includegraphics[<++>]{}<esc>i
    inoremap <silent> ;e \begin{enumerate}<cr>\end{enumerate}<++><esc>ko
+   inoremap <silent> ;p \usepackage{<++>}<esc>F{i
    inoremap <silent> ;u \item<space>
    inoremap <silent> ;o \item[]<++><esc>F]i
    inoremap <silent> ;sc \section{}<cr><++><esc>k0f}i
