@@ -11,11 +11,12 @@ alias trash="cd ~/.Trash"
 
 # school subjects
 alias school="docs; cd school"
-alias itn="school; cd ITN"
-alias ensa="school; cd ENSA"
-alias srwe="school; cd SRWE"
-alias dsa="school; cd DSA"
+alias rns="school; cd RnS"
 alias citp="school; cd CITP"
+alias dsa="school; cd DSA"
+alias itn="rns; cd ITN"
+alias ensa="rns; cd ENSA"
+alias srwe="rns; cd SRWE"
 
 # editing zsh dotfilfes
 alias za="vim ~/.config/zsh/.zalias"
