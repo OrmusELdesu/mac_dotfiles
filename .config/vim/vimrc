@@ -19,7 +19,9 @@ set autoindent
 set nobackup
 set nowritebackup
 set noswapfile
-set viminfo+=n~/.config/vim/viminfo
+"set viminfo+=n~/.config/vim/viminfo
+set viminfo+='1000,n~/.config/vim/viminfo
+
 set backspace=indent,eol,start
 set clipboard=unnamed,unnamedplus
 
