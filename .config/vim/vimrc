@@ -31,15 +31,21 @@ set shiftwidth=3
 set softtabstop=3
 set expandtab
 
-" next and previous logical lin
-nnoremap <S-j> gj
-nnoremap <S-k> gk
+" next and previous logical line
+nnoremap <C-j> gj
+nnoremap <C-k> gk
+
+" H/M/L screen and begin/end of line
+nnoremap <C-h> H
+nnoremap <C-l> L
+nnoremap H 0
+nnoremap L $
 
 " map escape key to jk 
 inoremap <silent> jk <esc>
 inoremap <silent> JK <esc>
-vnoremap <silent> <leader>jk <esc>
-vnoremap <silent> <leader>JK <esc>
+vnoremap <silent> jk <esc>
+vnoremap <silent> JK <esc>
 
 " go to next custom <++> marker
 nnoremap <leader>l <esc>/<++><cr>c4l
