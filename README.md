@@ -14,10 +14,10 @@ This repository contains my important configuration files for my darwin machines
 - `[[ -f $HOME/.config/zsh/.iterm2_shell_integration.zsh ]] && source $HOME/.config/zsh/.iterm2_shell_integration.zsh`
 
 ## vim-plug
-- to autoload my plugin manager with the central folder in `~/.config/vim/` the file `plug.vim` needs to be place on `/usr/vim/share/vim/autoload/`
+- to autoload my plugin manager with the central folder in `~/.config/vim/` the file `plug.vim` needs to be place in `/usr/vim/share/vim/autoload/`
 - `cp plug.vim /usr/vim/share/vim/autoload`
-- restart vim
-- `vim` and `:PlugInstall`
+- uncomment the plug functions from your vimrc, and restart vim 
+- then do a `:PlugInstall` to install all plugins in the `plugged` directory
 
 ## git-completion
 - download the latest `git-completion.zsh` script from the [git repo](https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh)
