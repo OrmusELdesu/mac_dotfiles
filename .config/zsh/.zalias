@@ -51,3 +51,6 @@ alias q="exit"
 
 # latex references
 alias getbib="zsh ~/Documents/shell/getbib.sh"
+
+# open command shortcut
+alias {o,op,ope,opne,onep}='open'
