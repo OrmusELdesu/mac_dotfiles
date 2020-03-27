@@ -17,7 +17,7 @@ alias dsa="school; cd DSA"
 alias itn="rse; cd ITN"
 alias ensa="rse; cd ENSA"
 alias srwe="rse; cd SRWE"
-alias csec="school; cd CSEC"
+alias csc="school; cd CSEC"
 
 # editing zsh dotfilfes
 alias za="vim ~/.config/zsh/.zalias"
