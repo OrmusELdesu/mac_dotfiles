@@ -8,6 +8,7 @@ alias mus="cd ~/Music"
 alias mvs="cd ~/Movies"
 alias pics="cd ~/Pictures"
 alias trash="cd ~/.Trash"
+alias text="docs; cd text"
 
 # school subjects
 alias school="docs; cd school"
@@ -36,21 +37,13 @@ alias ll="ls -l"
 alias la="ls -al"
 alias lh="ls -lh"
 
-# vimrc shortchuts
+# application settings
 alias vimrc="vim $HOME/.config/vim/vimrc"
 alias cvimrc="vim $HOME/.config/cvim/cvimrc"
-
-# wget HSTS (HTTP Secure Tracking System
-alias wget="wget --hsts-file=~/.config/wget/.wget-hsts"
-
-# dotfiles repository
+alias chrome='open -a "Google Chrome.app"'
 alias dot="git --git-dir=$HOME/.config/.dotrepo --work-tree=$HOME"
-
-# quit terminal
-alias q="exit"
-
-# latex references
 alias getbib="zsh ~/Documents/shell/getbib.sh"
-
-# open command shortcut
-alias {o,op,ope,opne,onep}='open'
+alias q="exit"
+alias wget="wget --hsts-file=~/.config/wget/.wget-hsts"
+alias {o,op,ope,opne,onep,oenp,oepn}='open'
+alias jrnl="$HOME/Documents/jrnl/jrnl.sh"
