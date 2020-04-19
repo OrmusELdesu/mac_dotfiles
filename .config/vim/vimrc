@@ -73,6 +73,13 @@ inoremap <leader>. <esc>o{<cr>}<++><esc>ko
 nnoremap <leader>/ A{<cr>}<++><esc>ko
 inoremap <leader>/ <esc>A{<cr>}<++><esc>ko
 
+" inserting date and time for journal =
+nnoremap <leader>d :read !echo "[ `date '+\%a \%Y-\%m-\%d'` ]"<cr>
+nnoremap <leader>t :read !echo "`date '+\%H:\%M'` - "<cr>
+inoremap ;d <esc>:read !echo "[ `date '+\%a \%Y-\%m-\%d'` ]"<cr>
+inoremap ;t <esc>:read !echo "`date '+\%H:\%M'` - "<cr>
+
+
 " file manipulation (create, read, update, delete)
 nnoremap <leader>w :w<cr>
 nnoremap <leader>x :x<cr>
@@ -94,7 +101,7 @@ function! Latex()
    inoremap <silent> ;i \begin{itemize}<cr>\end{itemize}<++><esc>ko
    inoremap <silent> ;g \includegraphics[<++>]{}<esc>i
    inoremap <silent> ;e \begin{enumerate}<cr>\end{enumerate}<++><esc>ko
-   inoremap <silent> ;p \usepackage{<++>}<esc>F{i
+   inoremap <silent> ;p \usepackage<++>{}<esc>i
    inoremap <silent> ;u \item<space>
    inoremap <silent> ;o \item[]<++><esc>F]i
    inoremap <silent> ;sc \section{}<cr><++><esc>k0f}i
