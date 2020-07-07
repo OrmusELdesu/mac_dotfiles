@@ -9,6 +9,7 @@ alias mvs="cd ~/Movies"
 alias pics="cd ~/Pictures"
 alias trash="cd ~/.Trash"
 alias text="docs; cd text"
+alias ctfs="docs; cd ctfs"
 
 # school subjects
 alias school="docs; cd school"
@@ -38,6 +39,7 @@ alias la="ls -al"
 alias lh="ls -lh"
 
 # application settings
+alias {v,vi}='vim'
 alias vimrc="vim $HOME/.config/vim/vimrc"
 alias cvimrc="vim $HOME/.config/cvim/cvimrc"
 alias chrome='open -a "Google Chrome.app"'
