@@ -6,7 +6,7 @@ call plug#end()
 
 syntax on
 filetype on
-colorscheme delek
+colorscheme zellner
 
 let g:netrw_dirhistmax=0
 let g:multi_cursor_exit_from_insert_mode=1
@@ -86,14 +86,17 @@ nnoremap <leader>x :x<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>e :q!<cr>
 
-" vimrc manipulation (edit, source, buffer nav)
+" vimrc manipulation (edit, source, buffer nav, compiler)
 nnoremap <leader>v :edit $MYVIMRC<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
 nnoremap <leader>n :bprev<cr>
 nnoremap <leader>m :bnext<cr>
+nnoremap <silent> <leader>c :!compiler <C-r>%<cr>
 
 " detect filetypes by their extensions
 autocmd bufenter,bufnew *.tex call Latex()
+autocmd bufenter,bufnew *.cpp call Clang()
+autocmd bufenter,bufnew *.hpp call Clang()
 
 function! Latex()
    set syntax=tex
@@ -109,5 +112,10 @@ function! Latex()
    inoremap <silent> ;ss \subsubsection{}<cr><++><esc>k0f}i
    inoremap <silent> ;bf \textbf{}<esc>i
    inoremap <silent> ;be \begin{DELRN}<Enter><++><Enter>\end{DELRN}<esc>:MultipleCursorsFind<space>DELRN<cr>c
-   nnoremap <silent> <leader>c :!xelatex main<cr>
+endfunction
+
+function! Clang()
+   set syntax=cpp
+   inoremap <silent> ;in #include<space><><esc>i
+   inoremap <silent> ;m int main(int argc, char *argv[])
 endfunction
