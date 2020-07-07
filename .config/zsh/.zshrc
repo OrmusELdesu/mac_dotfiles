@@ -1,4 +1,6 @@
-export PATH="/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:$PATH"
+export GNUCORE="/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin"
+export SCRIPTS="$HOME/.local/bin"
+export PATH="$GNUCORE:$SCRIPTS:$PATH"
 export MANPATH="/opt/local/share/man:$MANPATH"
 export EDITOR="/opt/local/bin/vim"
 export VIMHOME="$HOME/.config/vim"
