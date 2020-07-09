@@ -8,6 +8,7 @@ export VIMHOME="$HOME/.config/vim"
 export MYVIMRC="$HOME/.config/vim/vimrc"
 export VIMINIT="source $MYVIMRC"
 export PROMPT="[%F{cyan}%n%F{white}@%F{208}%m %F{yellow}%1~%F{reset_colour}]"$'\n'"%# "
+export GPG_TTY=$(tty)
 
 [[ -f $HOME/.config/zsh/.zalias ]] && source $HOME/.config/zsh/.zalias
 [[ -f $HOME/.config/zsh/.zfuncs ]] && source $HOME/.config/zsh/.zfuncs
