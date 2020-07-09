@@ -1,5 +1,6 @@
 export GNUCORE="/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin"
 export SCRIPTS="$HOME/.local/bin"
+#export TEXLIVE="/usr/local/texlive/2020/bin"
 export PATH="$GNUCORE:$SCRIPTS:$PATH"
 export MANPATH="/opt/local/share/man:$MANPATH"
 export EDITOR="/opt/local/bin/vim"
