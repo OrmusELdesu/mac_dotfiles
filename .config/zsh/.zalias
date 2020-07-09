@@ -33,7 +33,7 @@ alias reze="source ~/.zshenv"
 alias rezr="source ~/.config/zsh/.zshrc"
 
 # list shortcuts
-alias ls="ls --color=auto"
+#alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -al"
 alias lh="ls -lh"
