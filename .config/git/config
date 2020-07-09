@@ -8,3 +8,5 @@
 #	email = ormus@beta-frame.local
 [commit]
 	gpgSign = true
+[gpg]
+	program = gpg2
