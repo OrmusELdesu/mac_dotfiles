@@ -10,16 +10,17 @@ alias pics="cd ~/Pictures"
 alias trash="cd ~/.Trash"
 alias text="docs; cd text"
 alias ctfs="docs; cd ctfs"
+alias pdfs="docs; cd pdfs"
 
 # school subjects
 alias school="docs; cd school"
-alias rse="school; cd RSE"
-alias citp="school; cd CITP"
-alias dsa="school; cd DSA"
-alias itn="rse; cd ITN"
-alias ensa="rse; cd ENSA"
-alias srwe="rse; cd SRWE"
-alias csc="school; cd CSEC"
+alias nts="school; cd network"
+alias mob="school; cd mobile"
+alias cry="school; cd crypto"
+alias cmi="school; cd cmitp"
+alias journal="school; cd network/journal"
+alias img="journal; cd img"
+alias png="n=0; for i in *.png; do mv \"$i\" \"$n.png\"; ((n++)); done"
 
 # editing zsh dotfilfes
 alias za="vim ~/.config/zsh/.zalias"
@@ -33,7 +34,8 @@ alias reze="source ~/.zshenv"
 alias rezr="source ~/.config/zsh/.zshrc"
 
 # list shortcuts
-#alias ls="ls --color=auto"
+alias l="ls --color=auto"
+alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -al"
 alias lh="ls -lh"
@@ -44,7 +46,7 @@ alias vimrc="vim $HOME/.config/vim/vimrc"
 alias cvimrc="vim $HOME/.config/cvim/cvimrc"
 alias chrome='open -a "Google Chrome.app"'
 alias dot="git --git-dir=$HOME/.config/.dotrepo --work-tree=$HOME"
-alias getbib="zsh ~/Documents/shell/getbib.sh"
+alias getbib="zsh ~/.local/bin/getbib"
 alias q="exit"
 alias wget="wget --hsts-file=~/.config/wget/.wget-hsts"
 alias {o,op,ope,opne,onep,oenp,oepn}='open'
