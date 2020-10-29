@@ -1,7 +1,7 @@
 let mapleader=","
 
 call plug#begin('~/.config/vim/plugins')
-Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors', {'branch': 'master'}
 call plug#end()
 
 syntax on
@@ -21,6 +21,7 @@ set nowritebackup
 set noswapfile
 "set viminfo+=n~/.config/vim/viminfo
 set viminfo+='1000,n~/.config/vim/viminfo
+set laststatus=2
 
 set backspace=indent,eol,start
 set clipboard=unnamed,unnamedplus
@@ -92,6 +93,7 @@ nnoremap <leader>s :source $MYVIMRC<cr>
 nnoremap <leader>n :bprev<cr>
 nnoremap <leader>m :bnext<cr>
 nnoremap <silent> <leader>c :!compiler <C-r>%<cr>
+"nnoremap <silent> <leader>c :!xelatex main<cr>
 
 " detect filetypes by their extensions
 autocmd bufenter,bufnew *.tex call Latex()
@@ -107,6 +109,7 @@ function! Latex()
    inoremap <silent> ;p \usepackage<++>{}<esc>i
    inoremap <silent> ;u \item<space>
    inoremap <silent> ;o \item[]<++><esc>F]i
+   inoremap <silent> ;c \chapter{}<cr><++><esc>k0f}i
    inoremap <silent> ;sc \section{}<cr><++><esc>k0f}i
    inoremap <silent> ;sb \subsection{}<cr><++><esc>k0f}i
    inoremap <silent> ;ss \subsubsection{}<cr><++><esc>k0f}i
