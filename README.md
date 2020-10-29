@@ -16,8 +16,11 @@ This repository contains my important configuration files for my darwin machines
 ## vim-plug
 - to autoload my plugin manager with the central folder in `~/.config/vim/` the file `plug.vim` needs to be place in `/opt/local/share/vim/autoload/`
 - `cp plug.vim /opt/local/share/vim/autoload`
-- uncomment the plug functions from your vimrc, and restart vim 
-- then do a `:PlugInstall` to install all plugins in the `plugged` directory
+- auto-download plugins via GitHub username and repository with this line:
+- `Plug 'username/repository', {'branch': 'master'}`
+- uncomment the existing plug functions from your vimrc, and restart vim 
+- do a `:PlugInstall` to install all plugins in the `plugged` directory
+- do a `:PlugClean` to remove unused plugins in the `plugged` directory
 
 ## git-completion
 - download the latest `git-completion.zsh` script from the [git repo](https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh)
