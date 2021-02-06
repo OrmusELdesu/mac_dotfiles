@@ -1,8 +1,7 @@
-let mapleader=","
+source $HOME/.config/vim/pluglist/plugins.vim
+source $HOME/.config/vim/plugconf/coc.vim
 
-call plug#begin('~/.config/vim/plugins')
-Plug 'terryma/vim-multiple-cursors', {'branch': 'master'}
-call plug#end()
+let mapleader=","
 
 syntax on
 filetype on
@@ -27,18 +26,12 @@ set backspace=indent,eol,start
 set clipboard=unnamed,unnamedplus
 
 " replace tabs with 3 spaces
-set tabstop=3
-set shiftwidth=3
-set softtabstop=3
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
-" next and previous logical line
-nnoremap <C-j> gj
-nnoremap <C-k> gk
-
 " H/M/L screen and begin/end of line
-nnoremap <C-h> H
-nnoremap <C-l> L
 nnoremap H 0
 nnoremap L $
 
@@ -55,6 +48,12 @@ inoremap <silent> <leader>l <esc>/<++><cr>c4l
 " next and previous tab navigation
 nnoremap <silent> <leader>z :tabp<cr>
 nnoremap <silent> <leader>x :tabn<cr>
+
+" next previous split navigation
+nnoremap <C-h> <c-w>h
+nnoremap <C-j> <c-w>j
+nnoremap <C-k> <c-w>k
+nnoremap <C-l> <c-w>l
 
 " next and previous paragraph navigation
 nnoremap ] }
@@ -80,10 +79,8 @@ nnoremap <leader>t :read !echo "`date '+\%H:\%M'` - "<cr>
 inoremap ;d <esc>:read !echo "[ `date '+\%a \%Y-\%m-\%d'` ]"<cr>
 inoremap ;t <esc>:read !echo "`date '+\%H:\%M'` - "<cr>
 
-
 " file manipulation (create, read, update, delete)
 nnoremap <leader>w :w<cr>
-nnoremap <leader>x :x<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>e :q!<cr>
 
@@ -95,30 +92,5 @@ nnoremap <leader>m :bnext<cr>
 nnoremap <silent> <leader>c :!compiler <C-r>%<cr>
 "nnoremap <silent> <leader>c :!xelatex main<cr>
 
-" detect filetypes by their extensions
-autocmd bufenter,bufnew *.tex call Latex()
-autocmd bufenter,bufnew *.cpp call Clang()
-autocmd bufenter,bufnew *.hpp call Clang()
-
-function! Latex()
-   set syntax=tex
-   inoremap <silent> ;d \documentclass{<++>}<++><esc>Fsli
-   inoremap <silent> ;i \begin{itemize}<cr>\end{itemize}<++><esc>ko
-   inoremap <silent> ;g \includegraphics[<++>]{}<esc>i
-   inoremap <silent> ;e \begin{enumerate}<cr>\end{enumerate}<++><esc>ko
-   inoremap <silent> ;p \usepackage<++>{}<esc>i
-   inoremap <silent> ;u \item<space>
-   inoremap <silent> ;o \item[]<++><esc>F]i
-   inoremap <silent> ;c \chapter{}<cr><++><esc>k0f}i
-   inoremap <silent> ;sc \section{}<cr><++><esc>k0f}i
-   inoremap <silent> ;sb \subsection{}<cr><++><esc>k0f}i
-   inoremap <silent> ;ss \subsubsection{}<cr><++><esc>k0f}i
-   inoremap <silent> ;bf \textbf{}<esc>i
-   inoremap <silent> ;be \begin{DELRN}<Enter><++><Enter>\end{DELRN}<esc>:MultipleCursorsFind<space>DELRN<cr>c
-endfunction
-
-function! Clang()
-   set syntax=cpp
-   inoremap <silent> ;in #include<space><><esc>i
-   inoremap <silent> ;m int main(int argc, char *argv[])
-endfunction
+" language specific key maps for Latex and C++
+source $HOME/.config/vim/mappings/keymaps.vim
