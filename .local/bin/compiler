@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+if [ -e "$1" ] ; then
+   file=$(readlink -f "$1")
+   dir=${file%/*}
+   base="${file%.*}"
+   ext="${file##*.}"
+else
+   name=`basename "$0"`
+   echo "usage: $name <file>"
+   exit
+fi
+
+cd "$dir" || exit
+
+case "$ext" in
+   cpp) cc "$file" -o "$base" && "$base" 
+      ;;
+   tex) xelatex --output-directory="$dir" "$base" &&
+        xelatex --output-directory="$dir" "$base" 
+      ;;
+esac

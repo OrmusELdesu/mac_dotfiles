@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#author         :ormuseldesu
+#date           :2019/08/31 (August 31)
+#description    :generates a LaTeX bibliography based on the DOI of a pdf document for easy referencing.
+#title          :getbib.sh
+#usage          :bash getbib.sh <DOI/file>
+#version        :0.1
+
+if [[ -z $1 ]]; then
+  echo "usage: getbib.sh file.pdf";
+  echo "usage: getbib.sh 10.1524/9783486595192.1";
+  exit;
+fi
+
+if [[ -f $1 ]]; then
+  doi=$(pdfinfo "$1" 2>/dev/null | grep -io "doi:.*") ||
+  doi=$(pdftotext "$1" 2>/dev/null - | grep -io "doi:.* -m1");
+else
+  doi=$1;
+fi
+
+curl -sL "https://api.crossref.org/works/$doi/transform/application/x-bibtex" -w "\n"
