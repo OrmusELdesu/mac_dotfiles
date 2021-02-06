@@ -13,6 +13,7 @@ export GPG_TTY=$(tty)
 [[ -f $HOME/.config/zsh/.zalias ]] && source $HOME/.config/zsh/.zalias
 [[ -f $HOME/.config/zsh/.zfuncs ]] && source $HOME/.config/zsh/.zfuncs
 [[ -f $HOME/.config/zsh/.iterm2_shell_integration.zsh ]] && source $HOME/.config/zsh/.iterm2_shell_integration.zsh
+[[ -r "${prefix}/share/bash-completion/completions/pass" ]] && source
 
 autoload -U colors && colors
 
